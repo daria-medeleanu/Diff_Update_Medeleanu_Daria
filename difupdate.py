@@ -1,20 +1,17 @@
 import sys
-import difflib
-from difflib import unified_diff
 
 file_path = "./files/file_latest.bin"
 valid_commands = ['update', 'create']
 
-def create_diff_file(files_versions, latest_version):
-    f1 = files_versions[0]
-    f2 = files_versions[1]
+def create_diff_file(latest_file, current_file, diff_file_path):
+    with open(diff_file_path, 'wb') as diff_file:
+        with open(latest_file, 'rb') as latest:
+            with open(current_file, 'rb') as current:
+                latest_data = latest.readlines()
+                current_data = current.readlines()
+                for l in latest_data:
+                    print(l)
 
-    with open(f1) as file_1:
-        file_1_text = file_1.readlines()
-        with open(latest_version) as file_2:
-            file_2_text = file_2.readlines()
-            for line in difflib.diff_bytes(dfunc = unified_diff, a = file_1, b = file_2):
-                print(line)
 
 if len(sys.argv) < 4:
     print('Invalid number of arguments')
@@ -28,22 +25,12 @@ try:
 
     match command:
         case "create":
-            print('you used create command')
-            files_versions = []
-            latest_version = sys.argv[2]
-            for f in sys.argv[3:]:
-                files_versions.append(f)
-            create_diff_file(files_versions, latest_version)
+            latest_file = sys.argv[2]
+            diff_file_path = "./files/diff_file.bin"
+            for current_file in sys.argv[3:]:
+                create_diff_file(latest_file, current_file, diff_file_path)
         case "update":
             print('you used update command')
-
-    # with open(file_path,  "wb") as file:
-    #     data = ("A venit Isus pe lume intr-o noapte minunata\nIn Betleemul din Iudeea pe cer o stea se-arata\nMagii dupa stea pornesc plini de bucurie\nSa se-nchine Celui care a coborat din vesnicie\n")
-    #     file.write(data.encode())
-    #
-    # with open(file_path, 'rb') as file:
-    #     fileContent = file.read()
-    #     print(fileContent.decode())
 except ValueError as ve:
     print(f"Error: {ve}")
 except Exception as e:

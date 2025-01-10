@@ -1,2 +1,11 @@
-A venit Isus pe lume intr-o noapte minunata
-In Betleemul din Iudeea pe cer o stea se-arata
+#include <iostream>
+#include <fstream>
+using namespace std;
+int c,d,e;
+int main()
+{
+    cin>>a>>b>>c;
+    int d = a+b;
+    cout<<d;
+    return 0;
+}
