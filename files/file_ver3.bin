@@ -4,7 +4,7 @@ using namespace std;
 int c,d,e;
 int main()
 {
-    cin>>a>>b>>c;
+    cin>>a>>h>>c;
     int d = a+b;
     if(d%2==0){
         cout<<d;

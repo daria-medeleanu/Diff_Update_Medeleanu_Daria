@@ -5,5 +5,17 @@ int c,d,e;
 int main()
 {
     cin>>a>>b>>c;
+    while(a<b){
+        a--;
+        b++;
+        c = c+a;
+        a -= b;
+        b = b+t;
+        v= v-t;
+        s=s+s;
+        for(i=0;i<=11;i++){
+            ceva+=;
+        }
+    }
     return 0;
 }
