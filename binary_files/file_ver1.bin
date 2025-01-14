@@ -1,0 +1,9 @@
+using namespace std;
+int a,b,c;
+int main()
+{
+    cin>>a>>b>>c;
+    int d = a+b;
+    cin>>a>>c>>c;
+        return 0;
+}

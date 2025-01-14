@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-int c,d,e;
+int c,d,g;
 int main()
 {
     cin>>a>>b>>c;

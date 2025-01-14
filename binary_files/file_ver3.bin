@@ -1,0 +1,13 @@
+   #include <iostream>
+#include <fstream>
+using namespace std;
+int c,d,e;
+int main()
+{
+    cin>>a>>h>>c;
+    int d = a+b;
+    if(d%2==0){
+        cout<<d;
+    }
+    return 0;
+}
