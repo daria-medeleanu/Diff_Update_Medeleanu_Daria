@@ -3,7 +3,7 @@ import os
 
 VALID_COMMANDS = ['update', 'create']
 
-
+# Creates a binary difference file between 2 binary files (current_file, latest_file)
 def create_diff_file(latest_file, current_file_path, diff_file_path):
     with open(diff_file_path, 'ab') as diff_file:
         diff_file.write(b'\ndifference-for-'+current_file.encode("utf-8")+b'\n')
@@ -30,6 +30,7 @@ def create_diff_file(latest_file, current_file_path, diff_file_path):
                     for j in range(i, len(latest_data)):
                             diff_file.write(b'line '+ str(j+1).encode("utf-8")+ b' insert '+latest_data[j]+ b'\n')
 
+# Generates the latest file based on current_file using diff_file
 def generate_latest_file(current_file_path, diff_file_path):
     new_latest_file_path = './binary_files/new_latest_file.bin'
 
@@ -65,10 +66,12 @@ def generate_latest_file(current_file_path, diff_file_path):
                 for i in sorted(current_lines.keys()):
                     new_latest_file.write(current_lines[i])
             
+# Deletes content of binary file
 def delete_content_of_binary_file(file_path):
     with open(file_path, 'wb') as file:
         pass
 
+# Transforms content of text file into utf-8 encoding and writes it into a binary file
 def text_to_binary_file(text_file_path, binary_file_path):
     with open(text_file_path, "r", encoding="utf-8") as text_file:
         content = text_file.read()
@@ -76,6 +79,7 @@ def text_to_binary_file(text_file_path, binary_file_path):
     with open(binary_file_path, "wb") as binary_file:
         binary_file.write(content.encode("utf-8"))
 
+# Transforms/decodes binary file content into text content and writes it to a text file 
 def binary_file_to_text(binary_file_path, text_file_path):
     with open(binary_file_path, "rb") as binary_file:
         content = binary_file.read().decode("utf-8")
@@ -83,6 +87,7 @@ def binary_file_to_text(binary_file_path, text_file_path):
     with open(text_file_path, "w", encoding="utf-8") as text_file:
         text_file.write(content)
 
+# Creates binary files based on the name of the files provided
 def transformVersonFilesIntoBinaryFiles(version_files):
     for file in version_files:
         binary_file_path = 'binary_files/'+os.path.splitext(file)[0]+'.bin'

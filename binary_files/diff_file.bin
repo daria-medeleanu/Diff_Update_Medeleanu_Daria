@@ -1,0 +1,191 @@
+
+difference-for-file_ver1.txt
+line 1 delete using namespace std;
+
+line 1 insert #include <iostream>
+
+line 2 insert #include <fstream>
+
+line 3 insert using namespace std;
+
+line 4 insert int c,d,g;
+
+line 5 delete     cin>>a>>b>>c;
+
+line 5 insert int main()
+
+line 6 delete     int d = a+b;
+
+line 6 insert {
+
+line 7 delete     cin>>a>>c>>c;
+
+line 7 insert     cin>>a>>b>>c;
+
+line 8 delete         return 0;
+
+line 8 insert     while(a<b){
+
+line 9 insert         a--;
+
+line 9 delete }
+line 9 insert         a--;
+
+line 10 insert         b++;
+
+line 11 insert         c = c+a;
+
+line 12 insert         a -= b;
+
+line 13 insert         b = b+t;
+
+line 14 insert         v= v-t;
+
+line 15 insert         s=s+s;
+
+line 16 insert         for(i=0;i<=11;i++){
+
+line 17 insert             ceva+=;
+
+line 18 insert         }
+
+line 19 insert     }
+
+line 20 insert     return 0;
+
+line 21 insert }
+
+
+difference-for-file_ver2.txt
+line 1 delete #include <iostream>
+
+line 1 insert #include <iostream>
+
+line 2 delete #include <fstream>
+
+line 2 insert #include <fstream>
+
+line 3 delete using namespace std;
+
+line 3 insert using namespace std;
+
+line 4 delete int c,d,e;
+
+line 4 insert int c,d,g;
+
+line 5 delete int main()
+
+line 5 insert int main()
+
+line 6 delete {
+
+line 6 insert {
+
+line 7 delete     cin>>a>>b>>c;
+
+line 7 insert     cin>>a>>b>>c;
+
+line 8 delete     int d = a+b;
+
+line 8 insert     while(a<b){
+
+line 9 delete     cout<<d;
+
+line 9 insert         a--;
+
+line 10 delete     return 0;
+
+line 10 insert         b++;
+
+line 11 insert         c = c+a;
+
+line 11 delete }
+line 11 insert         c = c+a;
+
+line 12 insert         a -= b;
+
+line 13 insert         b = b+t;
+
+line 14 insert         v= v-t;
+
+line 15 insert         s=s+s;
+
+line 16 insert         for(i=0;i<=11;i++){
+
+line 17 insert             ceva+=;
+
+line 18 insert         }
+
+line 19 insert     }
+
+line 20 insert     return 0;
+
+line 21 insert }
+
+
+difference-for-file_ver3.txt
+line 1 delete    #include <iostream>
+
+line 1 insert #include <iostream>
+
+line 2 delete #include <fstream>
+
+line 2 insert #include <fstream>
+
+line 3 delete using namespace std;
+
+line 3 insert using namespace std;
+
+line 4 delete int c,d,e;
+
+line 4 insert int c,d,g;
+
+line 5 delete int main()
+
+line 5 insert int main()
+
+line 6 delete {
+
+line 6 insert {
+
+line 7 delete     cin>>a>>h>>c;
+
+line 7 insert     cin>>a>>b>>c;
+
+line 8 delete     int d = a+b;
+
+line 8 insert     while(a<b){
+
+line 9 delete     if(d%2==0){
+
+line 9 insert         a--;
+
+line 10 delete         cout<<d;
+
+line 10 insert         b++;
+
+line 11 insert         c = c+a;
+
+line 12 insert         a -= b;
+
+line 13 insert         b = b+t;
+
+line 13 delete }
+line 13 insert         b = b+t;
+
+line 14 insert         v= v-t;
+
+line 15 insert         s=s+s;
+
+line 16 insert         for(i=0;i<=11;i++){
+
+line 17 insert             ceva+=;
+
+line 18 insert         }
+
+line 19 insert     }
+
+line 20 insert     return 0;
+
+line 21 insert }
+
