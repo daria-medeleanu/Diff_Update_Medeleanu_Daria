@@ -15,7 +15,7 @@ def create_diff_file(latest_file, current_file_path, diff_file_path):
                 for i in range(nr_min_lines):
                     if len(current_data[i]) < len(latest_data[i]):
                         diff_file.write(b'line '+str(i+1).encode("utf-8")+b' insert '+latest_data[i]+b'\n')
-                    elif(len(current_data[i]) == len(latest_data[i]) and current_data[i] != latest_data[i]+b'\n'):
+                    elif(len(current_data[i]) == len(latest_data[i]) and current_data[i] != latest_data[i]):
                         diff_file.write(b'line '+str(i+1).encode("utf-8")+ b' update '+ current_data[i]+b'\n')
                         diff_file.write(b'line '+ str(i+1).encode("utf-8")+ b' update '+ latest_data[i]+b'\n')
                     elif(len(current_data[i]) > len(latest_data[i])):
@@ -69,10 +69,6 @@ def delete_content_of_binary_file(file_path):
     with open(file_path, 'wb') as file:
         pass
 
-if len(sys.argv) < 4:
-    print('Invalid number of arguments')
-    sys.exit(1)
-
 def text_to_binary_file(text_file_path, binary_file_path):
     with open(text_file_path, "r", encoding="utf-8") as text_file:
         content = text_file.read()
@@ -92,6 +88,10 @@ def transformVersonFilesIntoBinaryFiles(version_files):
         binary_file_path = 'binary_files/'+os.path.splitext(file)[0]+'.bin'
         text_to_binary_file(file, binary_file_path)
 
+if len(sys.argv) < 4:
+    print('Invalid number of arguments')
+    sys.exit(1)
+    
 try:
     command = sys.argv[1]
     if command not in VALID_COMMANDS:
@@ -123,3 +123,4 @@ except ValueError as ve:
     print(f"Error: {ve}")
 except Exception as e:
     print(f"An expected error occured: {e}")
+
